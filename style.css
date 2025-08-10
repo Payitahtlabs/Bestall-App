@@ -1,96 +1,166 @@
 header {
-    display: flex;
-    height: 80px;
-    justify-content: space-between;
-    background-color: #ff8001;
-    padding: 0 16px;
+  display: flex;
+  height: 80px;
+  justify-content: space-between;
+  background-color: #ff8001;
+  padding: 0 16px;
 }
 
 .menu_button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .menu_button img {
-    height: 24px;
+  height: 24px;
 }
 
 .header_logo {
-    height: 60px;
-    align-self: center;
+  height: 60px;
+  align-self: center;
 }
 
 .content_total {
-    display: flex;
-    background-color: aliceblue;
-    height: 750px;
+  display: flex;
+  background-color: aliceblue;
+  min-height: 100vh;
+  height: 100vh;
 }
 
 .content_restaurant {
-    width: calc(100% - 300px);
-    height: 90%;
-    background-color: blanchedalmond;
+  width: calc(100% - 300px);
+  background-color: blanchedalmond;
+  flex-grow: 1;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .content_restaurant_head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 16px;
-    background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: black;
 }
 
 .content_restaurant_titelbox {
-    display: flex;
-    flex-direction: column;
-    height: 80px;
-    padding-left: 16px;
-    justify-content: center;
-    background-color: lavender;
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  padding-left: 16px;
+  justify-content: center;
+  background-color: lavender;
 }
 
 .restaurant_rating {
-    font-size: 14px;
-    color: #ff8001;
+  font-size: 14px;
+  color: #ff8001;
 }
 
 .content_restaurant_navbar {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    background-color: #e7e5e5;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: #e7e5e5;
 }
 
 .content_restaurant_category {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    background-color: snowwhite;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: snowwhite;
 }
 
 .basket_stickyrail {
-    width: 300px;
-    flex-grow: 1;
-    background-color: lightgray;
+  width: 300px;
+  flex-grow: 1;
+  background-color: lightgray;
 }
 
 .basket_stickyrail_content {
-    width: 100%;
-    height: 400px;
-    position: sticky;
-    top: 0;
+  width: 100%;
+  height: 400px;
+  position: sticky;
+  top: 0;
 }
 
-.basket_responsive {}
-
-.basket_responsive_closed {}
+.basket_responsive,
+.basket_overlay {
+  display: none;
+}
 
 footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 80px;
+  background-color: rgb(66, 65, 68);
+}
+
+@media (max-width: 700px) {
+  .basket_stickyrail {
+    display: none;
+  }
+
+  .basket_responsive {
+    display: block;
+  }
+
+
+  .basket_mobile_btn {
+    width: 100vw;
+    background: #1976d2;
+    color: #fff;
+    border-radius: 0;
+    border: none;
+    padding: 16px;
+    font-size: 19px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+  }
+
+  .basket_overlay {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0.8;
+  }
+
+  .basket_overlay_title {
+    width: 100vw;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 16px 0 8px 0;
+    background: #1976d2;
+    color: #fff;
+    border-radius: 0;
+    cursor: pointer;
+
+  }
+
+  .basket_overlay_content {
+  flex-grow: 1;
+  overflow-y: auto;
+  background: white;
+  padding: 16px;
+}
+
+  .basket_responsive.basket_responsive_open .basket_mobile_btn {
+    display: none;
+  }
+
+
+
+  .basket_responsive.basket_responsive_open .basket_overlay {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 80px;
-    background-color: rgb(66, 65, 68);
+  }
 }

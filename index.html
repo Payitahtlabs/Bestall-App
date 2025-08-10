@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./styles/standard.css">
     <link rel="stylesheet" href="./style.css">
 
-    
+
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
 
@@ -19,7 +19,7 @@
 
     <link rel="icon" type="image/png" sizes="192x192" href="./assets/icons/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="./assets/icons/android-chrome-512x512.png">
-    
+
     <link rel="icon" href="./assets/icons/favicon.ico" type="image/x-icon">
 </head>
 
@@ -33,7 +33,7 @@
     <main class="content_total">
         <div class="content_restaurant">
             <div class="content_restaurant_head">
-                <img class="content_restaurant_img" src="./assets/img/restaurant.jpg" alt="Restaurant Image">
+                <img class="content_restaurant_img" src="" alt="Restaurant Image">
             </div>
             <div class="content_restaurant_titelbox">
                 <h1>The Restaurant</h1>
@@ -54,7 +54,15 @@
                 <h2>Warenkorb</h2>
             </div>
         </div>
-        <div id="basket_responsive" class="basket_responsive basket_responsive_closed"></div>
+        <div id="basket_responsive" class="basket_responsive">
+            <button id="basket_mobile_btn" class="basket_mobile_btn" onclick="toggleBasket()">Warenkorb</button>
+            <div id="basket_overlay" class="basket_overlay">
+                <span class="basket_overlay_title" onclick="toggleBasket(event)">Warenkorb</span>
+                <div class="basket_overlay_content">
+                  <!-- Warenkorb-Inhalt hier -->
+                </div>
+            </div>
+        </div>
     </main>
     <footer> ... Footerinhalt ... </footer>
 

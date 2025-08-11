@@ -39,9 +39,12 @@
                 <h1>The Restaurant</h1>
                 <div class="restaurant_rating"> Bewertung: (4,2 von 5 Sternen)</div>
             </div>
-            <div class="content_restaurant_navbar">
-                Hauptgerichte | Beilagen | Desserts | Getränke
-            </div>
+            <nav class="content_restaurant_navbar">
+                <button onclick="selectCategory(this)" id="category_btn0" class="category_btn">Hauptgerichte</button>
+                <button onclick="selectCategory(this)" id="category_btn1" class="category_btn">Beilagen</button>
+                <button onclick="selectCategory(this)" id="category_btn2" class="category_btn">Desserts</button>
+                <button onclick="selectCategory(this)" id="category_btn3" class="category_btn">Getränke</button>
+            </nav>
             <div class="content_restaurant_category">
                 Hauptgerichte
             </div>

@@ -23,14 +23,12 @@ header {
 
 .content_total {
   display: flex;
-  background-color: aliceblue;
   min-height: 100vh;
   height: 100vh;
 }
 
 .content_restaurant {
   width: calc(100% - 300px);
-  background-color: blanchedalmond;
   flex-grow: 1;
   height: auto;
   display: flex;
@@ -62,8 +60,17 @@ header {
 .content_restaurant_navbar {
   display: flex;
   align-items: center;
-  height: 40px;
-  background-color: #e7e5e5;
+  height: 60px;
+  gap: 12px;
+  background-color: white;
+}
+
+.category_btn {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .content_restaurant_category {

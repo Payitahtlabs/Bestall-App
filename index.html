@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lieferdienst Webseite</title>
 
-    <script src="script.js"></script>
+    <script src="scripts/db.js" defer></script>
+    <script src="scripts/template.js" defer></script>
+    <script src="script.js" defer></script>
 
     <link rel="stylesheet" href="./styles/standard.css">
     <link rel="stylesheet" href="./style.css">
@@ -39,18 +41,14 @@
                 <h1>The Restaurant</h1>
                 <div class="restaurant_rating"> Bewertung: (4,2 von 5 Sternen)</div>
             </div>
-            <nav class="content_restaurant_navbar">
+            <nav class="navbar">
                 <button onclick="selectCategory(this)" id="category_btn0" class="category_btn">Hauptgerichte</button>
                 <button onclick="selectCategory(this)" id="category_btn1" class="category_btn">Beilagen</button>
                 <button onclick="selectCategory(this)" id="category_btn2" class="category_btn">Desserts</button>
                 <button onclick="selectCategory(this)" id="category_btn3" class="category_btn">Getränke</button>
             </nav>
-            <div class="content_restaurant_category">
-                Hauptgerichte
-            </div>
-            <div class="content_restaurant_category">
-                Beilagen
-            </div>
+            <div class="content_restaurant_category" id="category_main_courses"></div>
+            <div class="content_restaurant_category" id="category_side_dishes"></div>
         </div>
         <div class="basket_stickyrail">
             <div class="basket_stickyrail_content">

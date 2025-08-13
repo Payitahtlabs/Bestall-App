@@ -41,14 +41,16 @@
                 <h1>The Restaurant</h1>
                 <div class="restaurant_rating"> Bewertung: (4,2 von 5 Sternen)</div>
             </div>
-            <nav class="navbar">
-                <button onclick="selectCategory(this)" id="category_btn0" class="category_btn">Hauptgerichte</button>
-                <button onclick="selectCategory(this)" id="category_btn1" class="category_btn">Beilagen</button>
-                <button onclick="selectCategory(this)" id="category_btn2" class="category_btn">Desserts</button>
-                <button onclick="selectCategory(this)" id="category_btn3" class="category_btn">Getränke</button>
+            <nav class="navbar" id="category_nav">
+                <button data-category="hauptgerichte" onclick="selectCategory(this)" class="category_btn">Hauptgerichte</button>
+                <button data-category="beilagen" onclick="selectCategory(this)" class="category_btn">Beilagen</button>
+                <button data-category="desserts" onclick="selectCategory(this)" class="category_btn">Desserts</button>
+                <button data-category="getraenke" onclick="selectCategory(this)" class="category_btn">Getränke</button>
             </nav>
             <div class="content_restaurant_category" id="category_main_courses"></div>
             <div class="content_restaurant_category" id="category_side_dishes"></div>
+            <div class="content_restaurant_category" id="category_desserts"></div>
+            <div class="content_restaurant_category" id="category_getraenke"></div>
         </div>
         <div class="basket_stickyrail">
             <div class="basket_stickyrail_content">

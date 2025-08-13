@@ -9,33 +9,16 @@ function init() {
 
 function renderCategory() {
   if (!Array.isArray(myDishes) || typeof dishesListTemplate !== 'function') return;
+  const container = document.getElementById('category_container');
+  if (!container) return;
+  const filtered = myDishes.filter(d => (d.category || 'hauptgerichte') === activeCategory);
+  container.innerHTML = filtered.length ? sectionTemplate(activeCategory, filtered) : '';
+}
 
-  // Mapping Container IDs
-  const containers = {
-    hauptgerichte: document.getElementById('category_main_courses'),
-    beilagen: document.getElementById('category_side_dishes'),
-    desserts: document.getElementById('category_desserts'),
-    getraenke: document.getElementById('category_getraenke')
-  };
-
-  // Alle Container ausblenden
-  Object.values(containers).forEach(c => { if (c) c.style.display = 'none'; });
-
-  // Filter: leere category => hauptgerichte Standard
-  const filtered = myDishes.filter(d => {
-    const cat = d.category || 'hauptgerichte';
-    return cat === activeCategory;
-  });
-
-  const target = containers[activeCategory];
-  if (target) {
-    target.style.display = 'block';
-    if (filtered.length) {
-      target.innerHTML = dishesListTemplate(filtered);
-    } else {
-      target.innerHTML = '';
-    }
-  }
+function sectionTemplate(category, dishes) {
+  const titleMap = { hauptgerichte: 'Hauptgerichte', beilagen: 'Beilagen', desserts: 'Desserts', getraenke: 'Getränke' };
+  const heading = titleMap[category] || category;
+  return `\n    <h2 class="category_heading">${heading}</h2>\n    <div class="dishes_wrapper">${dishesListTemplate(dishes)}</div>`;
 }
 
 function selectCategory(btn) {

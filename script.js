@@ -16,9 +16,7 @@ function renderCategory() {
 }
 
 function sectionTemplate(category, dishes) {
-  const titleMap = { hauptgerichte: 'Hauptgerichte', beilagen: 'Beilagen', desserts: 'Desserts', getraenke: 'Getränke' };
-  const heading = titleMap[category] || category;
-  return `\n    <h2 class="category_heading">${heading}</h2>\n    <div class="dishes_wrapper">${dishesListTemplate(dishes)}</div>`;
+  return ` <div class="dishes_wrapper">${dishesListTemplate(dishes)}</div>`;
 }
 
 function selectCategory(btn) {

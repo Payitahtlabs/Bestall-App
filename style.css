@@ -245,10 +245,6 @@ footer {
   transform: scale(0.9);
 }
 
-.dish-add-btn:focus {
-  outline: 2px solid #145ea7;
-  outline-offset: 2px;
-}
 
 
 

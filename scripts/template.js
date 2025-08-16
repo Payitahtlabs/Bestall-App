@@ -11,7 +11,7 @@ const dishTemplate = (dish) => {
 					<span class="dish__price">${dish.price.toFixed(2)} €</span>
 				</div>
 			</div>
-			<button class="dish__add-btn" onclick="addToBasket(${dish.id})">+</button>
+			<button class="dish__add-btn" onclick="addToCart(${dish.id})">+</button>
 		</div>
 	`;
 }

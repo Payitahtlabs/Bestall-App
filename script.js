@@ -42,42 +42,44 @@ function selectCategory(btn) {
 function addToCart(dishId) {
   const dish = myDishes.find(d => d.id === dishId);
   if (!dish) return;
+
   const existing = cart.find(i => i.id === dishId);
-  if (existing) {
-    existing.qty += 1;
-  } else {
-    cart.push({ id: dish.id, name: dish.name, price: dish.price, qty: 1 });
-  }
+  if (existing) existing.qty += 1;
+  else cart.push({ id: dish.id, name: dish.name, price: dish.price, qty: 1 });
+
   renderCart();
 }
 
 function renderCart() {
-  const els = {
-    list: document.querySelector('.cart__items'),
-    summary: document.querySelector('.cart__summary'),
-    mList: document.querySelector('.cart-mobile__items'),
-    mSummary: document.querySelector('.cart-mobile__summary')
-  };
-  if (!els.list || !els.summary) return;
+  const [list, summary, mList, mSummary] = [
+    document.querySelector('.cart__items'),
+    document.querySelector('.cart__summary'),
+    document.querySelector('.cart-mobile__items'),
+    document.querySelector('.cart-mobile__summary')
+  ];
+
+  if (!list || !summary) return;
 
   if (!cart.length) {
     const empty = emptyCartTemplate();
-    [els.list, els.mList].forEach(el => el && (el.innerHTML = empty));
-    [els.summary, els.mSummary].forEach(el => el && (el.innerHTML = ''));
+    [list, mList].forEach(el => el && (el.innerHTML = empty));
+    [summary, mSummary].forEach(el => el && (el.innerHTML = ''));
     return;
   }
 
   const itemsHtml = cart.map(cartItemTemplate).join('');
   const summaryHtml = cartSummaryTemplate(calcCartTotals(cart));
-  [els.list, els.mList].forEach(el => el && (el.innerHTML = itemsHtml));
-  [els.summary, els.mSummary].forEach(el => el && (el.innerHTML = summaryHtml));
+
+  [list, mList].forEach(el => el && (el.innerHTML = itemsHtml));
+  [summary, mSummary].forEach(el => el && (el.innerHTML = summaryHtml));
 }
 
 function calcCartTotals(items){
-  const subtotal = items.reduce((s,i)=> s + i.price * i.qty, 0);
-  const delivery = subtotal ? 5 : 0;
+  const subtotal = items.reduce((sum, i) => sum + i.price * i.qty, 0);
+  const delivery = subtotal > 0 ? 5 : 0;
   return { subtotal, delivery, grand: subtotal + delivery };
 }
+
 
 function checkoutCart() {
   if (!cart.length) return;

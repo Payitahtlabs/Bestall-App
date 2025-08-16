@@ -3,7 +3,7 @@ let activeCategory = 'hauptgerichte';
 function init() {
   renderCategory();
   // Optional: ersten Button aktiv markieren
-  const firstBtn = document.querySelector('.category_btn');
+  const firstBtn = document.querySelector('.category-nav__btn');
   if (firstBtn) firstBtn.classList.add('active');
 }
 
@@ -23,7 +23,7 @@ function selectCategory(btn) {
   const cat = btn.getAttribute('data-category');
   if (!cat) return;
   activeCategory = cat;
-  document.querySelectorAll('.category_btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.category-nav__btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   renderCategory();
 }
@@ -34,9 +34,9 @@ function selectCategory(btn) {
       event.stopPropagation();
     }
 
-    const basketResponsive = document.getElementById('basket_responsive');
-
-    basketResponsive.classList.toggle('basket_responsive_open'); // Toggle the class to open or close the basket
+  const cartResponsive = document.getElementById('cart_responsive');
+  if(!cartResponsive) return;
+  cartResponsive.classList.toggle('cart-mobile--open');
   }
 
 

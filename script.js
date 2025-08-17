@@ -50,6 +50,28 @@ function addToCart(dishId) {
   renderCart();
 }
 
+function incrementItem(id){
+  const item = cart.find(i => i.id === id);
+  if (!item) return;
+  item.qty += 1;
+  renderCart();
+}
+
+function decrementItem(id){
+  const item = cart.find(i => i.id === id);
+  if (!item) return;
+  item.qty -= 1;
+  if (item.qty <= 0) {
+    cart = cart.filter(i => i.id !== id);
+  }
+  renderCart();
+}
+
+function removeFromCart(id){
+  cart = cart.filter(i => i.id !== id);
+  renderCart();
+}
+
 function renderCart() {
   const [list, summary, mList, mSummary] = [
     document.querySelector('.cart__items'),

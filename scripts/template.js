@@ -29,8 +29,13 @@ function cartItemTemplate(item) {
 	return `<div class="cart-item" data-id="${item.id}">
 		<span class="cart-item__name">${item.name}</span>
 		<div class="cart-item__meta">
-			<span class="cart-item__qty">${item.qty}x</span>
+			<div class="cart-item__controls">
+				<button class="cart-item__btn cart-item__btn--minus" onclick="decrementItem(${item.id})" aria-label="Menge verringern">−</button>
+				<span class="cart-item__qty" aria-label="Menge">${item.qty}</span>
+				<button class="cart-item__btn cart-item__btn--plus" onclick="incrementItem(${item.id})" aria-label="Menge erhöhen">+</button>
+			</div>
 			<span class="cart-item__price">${total} €</span>
+			<button class="cart-item__btn cart-item__btn--remove" onclick="removeFromCart(${item.id})" aria-label="Artikel entfernen">×</button>
 		</div>
 	</div>`;
 }

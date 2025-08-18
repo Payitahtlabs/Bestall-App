@@ -150,9 +150,6 @@ footer {
   background-color: rgb(66, 65, 68);
 }
 
-
-/* Dish List / Hauptgerichte Styles */
-
 .dish {
   display: flex;
   gap: 16px;
@@ -222,7 +219,7 @@ footer {
 .dish__add-btn {
   background: transparent;
   border: none;
-  color: #ff8001; /* Header-Orange */
+  color: #ff8001;
   font-size: 28px;
   line-height: 1;
   cursor: pointer;
@@ -231,7 +228,7 @@ footer {
   align-items: center;
   justify-content: center;
   transition: color .2s, transform .15s, background .2s;
-  border-radius: 6px; /* leichte hover Fläche */
+  border-radius: 6px;
 }
 
 .dish__add-btn:hover {
@@ -415,20 +412,37 @@ footer {
   border-radius: 6px;
   transition: color .2s, background .2s, transform .15s;
 }
-.cart-item__btn:hover { background: rgba(25,118,210,0.08); color:#145ea7; }
+.cart-item__btn:hover {
+  background: rgba(25,118,210,0.08);
+  color:#145ea7;
+}
 
 .cart-item__btn--plus,
 .cart-item__btn--minus,
-.cart-item__btn--remove { color:#ff8001; }
+.cart-item__btn--remove {
+  color:#ff8001;
+}
+
 .cart-item__btn--plus:hover,
 .cart-item__btn--minus:hover,
-.cart-item__btn--remove:hover { background: rgba(255,128,1,0.10); color:#d66e00; }
-.cart-item__btn:active { transform: scale(.9); }
+.cart-item__btn--remove:hover {
+  background: rgba(255,128,1,0.10);
+  color:#d66e00;
+}
 
+.cart-item__btn:active {
+  transform: scale(.9);
+}
 
-.cart-item__qty { min-width: 20px; text-align: center; font-weight:600; }
+.cart-item__btn--remove .icon--trash {
+  width:18px;
+  height:18px;
+}
 
 .cart-item__qty {
+  min-width: 20px;
+  text-align: center;
+  font-weight:600;
   color: #555;
 }
 
@@ -469,7 +483,7 @@ footer {
   margin-top: 4px;
   width: 100%;
   padding: 10px 14px;
-  background: #ff8001; /* Header-Orange */
+  background: #ff8001;
   color: #fff;
   border: none;
   border-radius: 6px;

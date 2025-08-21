@@ -30,11 +30,11 @@ header {
 }
 
 .restaurant {
-  width: calc(100% - 300px);
-  flex-grow: 1;
+  flex: 1 1 auto;
   height: auto;
   display: flex;
   flex-direction: column;
+  transition: width .35s ease;
 }
 
 .restaurant__hero {
@@ -100,10 +100,36 @@ header {
   flex-direction:column;
 }
 
-.cart {
-  width: 300px;
-  flex-grow: 1;
+ .cart {
+  flex: 0 0 300px;
   background-color: whitesmoke;
+  box-shadow: 0 0 12px rgba(0,0,0,.15);
+  transition: flex-basis .15s ease, opacity .35s ease, box-shadow .35s ease;
+  will-change: flex-basis, opacity;
+  position: relative;
+}
+
+ .cart--hiding .cart__content {
+  opacity: 0;
+}
+ .cart--hiding {
+  box-shadow: 0 0 4px rgba(0,0,0,.05);
+ }
+
+ .cart__content {
+   transition: opacity .32s ease;
+ }
+
+ .cart--hidden {
+  flex-basis: 0;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  box-shadow: none;
+}
+.cart--hidden .cart__content {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .cart__content {
@@ -254,6 +280,10 @@ footer {
     display: block;
   }
 
+  .header__menu-icon {
+    display: none;
+  }
+  }
 
   .cart-mobile__toggle {
     width: 100vw;
@@ -351,7 +381,7 @@ footer {
     background: #ff8001;
     color: #fff;
   }
-}
+
 
 /* ===== Cart (Desktop & Mobile Shared) ===== */
 .cart__items,

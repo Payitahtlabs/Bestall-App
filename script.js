@@ -7,6 +7,9 @@ function init() {
   
   const firstBtn = document.querySelector('.category-nav__btn');
   if (firstBtn) firstBtn.classList.add('active');
+
+  const menuBtn = document.querySelector('.header__menu-btn');
+  if (menuBtn) menuBtn.addEventListener('click', toggleCartVisibility);
 }
 
 function renderCategory() {
@@ -108,6 +111,13 @@ function checkoutCart() {
   alert('Bestellung gesendet!');
   cart = [];
   renderCart();
+}
+
+// === Cart Show/Hide via Header Menu ===
+function toggleCartVisibility(){
+  const cartEl = document.querySelector('.cart');
+  if(!cartEl) return;
+  cartEl.classList.toggle('cart--hidden');
 }
 
 

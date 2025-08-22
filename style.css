@@ -5,6 +5,7 @@ header {
   align-items: center;
   background-color: #ff8001;
   padding: 0 16px;
+  width: 100%;
 }
 
 .header__logo {
@@ -100,6 +101,7 @@ footer {
   color: white;
   height: 80px;
   background-color: rgb(66, 65, 68);
+  width: 100%;
 }
 
 .dish {
@@ -194,8 +196,6 @@ footer {
   .dish-description {
     font-size: 13px;
   }
-
-  /* .dish-add-btn responsive moved to assets.css */
 
   #category_container {
     padding: 16px 12px 80px 12px;

@@ -3,8 +3,12 @@
     margin: 0;
 }
 
-body {
+html, body {
     min-height: 100vh;
     font-family: sans-serif;
+    width: 100%;
+    overflow-x: hidden; /* prevent accidental horizontal scroll on narrow simulated devices */
+    -webkit-text-size-adjust: 100%;
 }
+
 

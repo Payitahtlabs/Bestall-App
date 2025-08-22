@@ -1,4 +1,8 @@
-/* Button Styles (centralized) */
+.header__menu-btn {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
 
 .dish__add-btn {
 	background: transparent;

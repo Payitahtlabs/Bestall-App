@@ -174,29 +174,6 @@ footer {
   color: #222;
 }
 
-.dish__add-btn {
-  background: transparent;
-  border: none;
-  color: #ff8001;
-  font-size: 28px;
-  line-height: 1;
-  cursor: pointer;
-  padding: 4px 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: color .2s, transform .15s, background .2s;
-  border-radius: 6px;
-}
-
-.dish__add-btn:hover {
-  background: rgba(255,128,1,0.10);
-  color: #d66e00;
-}
-
-.dish__add-btn:active {
-  transform: scale(.9);
-}
 
 
 
@@ -224,12 +201,7 @@ footer {
     font-size: 13px;
   }
 
-  .dish-add-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 20px;
-    line-height: 36px;
-  }
+  /* .dish-add-btn responsive moved to assets.css */
 
   #category_container {
     padding: 16px 12px 80px 12px;

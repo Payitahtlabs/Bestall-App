@@ -47,6 +47,7 @@
 .cart__title {
 	margin: 0;
 	padding: 16px;
+	text-align: center; /* Titel mittig */
 }
 .cart__separator {
 	height: 1px;

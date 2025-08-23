@@ -78,8 +78,8 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 8px 16px; /* reduzierte Höhe */
-  background-color: whitesmoke; /* gleiche Farbe wie Cart */
+  padding: 8px 0 8px 16px;
+  background-color: whitesmoke;
   border-radius: 6px;
   margin: 12px 0;
   height: auto;
@@ -234,7 +234,7 @@ footer {
   }
 
   .category-nav__btn {
-    padding: 12px 18px;
+    padding: 6px 10px;
     font-size: 14px;
     margin-right: 8px;
   }
@@ -252,6 +252,18 @@ footer {
 
 
 @media (max-width: 500px) {
+  .category-nav {
+    gap: 8px;
+    padding: 6px 8px;
+
+  }
+  .category-nav::-webkit-scrollbar { /* Webkit */
+    display: none;
+  }
+  .category-nav__btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
   .category-content {
     padding: 0 8px 88px 8px;
     gap: 4px;
@@ -289,5 +301,60 @@ footer {
   .restaurant__image {
     max-height: 200px;
     border-radius: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .category-nav {
+    gap: 6px;
+    padding: 4px 6px;
+  }
+  .category-nav__btn {
+    font-size: 12px;
+  }
+  .dish {
+    gap: 8px;
+    padding: 8px 10px;
+  }
+  .dish__image-wrapper {
+    flex: 0 0 56px;
+    height: 56px;
+  }
+  .dish__name {
+    font-size: 15px;
+  }
+  .dish__description {
+    font-size: 12px;
+  }
+  .restaurant__image {
+    max-height: 180px;
+  }
+  .restaurant__title-box {
+    padding: 12px 12px;
+  }
+}
+
+@media (max-width: 365px) {
+  .category-nav {
+  -webkit-overflow-scrolling: touch;
+  gap: 4px;
+  padding: 4px 6px;
+  }
+  .category-nav__btn {
+  font-size: 10px;
+  margin: 0; /* linksbündig */
+  }
+  .dish {
+    padding: 8px 8px;
+  }
+  .dish__image-wrapper {
+    flex: 0 0 52px;
+    height: 52px;
+  }
+  .dish__name {
+    font-size: 14px;
+  }
+  .dish__description {
+    font-size: 12px;
   }
 }

@@ -1,7 +1,7 @@
 .cart {
 	flex: 0 0 300px;
 	background-color: whitesmoke;
-	box-shadow: 0 0 12px rgba(0,0,0,.15);
+	box-shadow: 0 0 12px rgba(0,0,0,.25);
 	transition: flex-basis .15s ease, opacity .35s ease, box-shadow .35s ease;
 	will-change: flex-basis, opacity;
 	position: -webkit-sticky; /* Safari */
@@ -46,7 +46,7 @@
 
 .cart__title {
 	margin: 0;
-	padding: 16px 0;
+	padding: 16px;
 }
 .cart__separator {
 	height: 1px;

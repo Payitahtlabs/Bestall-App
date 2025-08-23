@@ -80,12 +80,13 @@ header {
   gap: 12px;
   padding: 8px 16px; /* reduzierte Höhe */
   background-color: whitesmoke; /* gleiche Farbe wie Cart */
+  border-radius: 6px;
   margin: 12px 0;
   height: auto;
 }
 
 .category-nav__btn {
-  padding: 12px 16px;
+  padding: 6px 10px;
   border-radius: 12px;
   border: none;
   cursor: pointer;

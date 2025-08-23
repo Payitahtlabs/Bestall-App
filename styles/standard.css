@@ -7,8 +7,17 @@ html, body {
     min-height: 100vh;
     font-family: sans-serif;
     width: 100%;
-    overflow-x: hidden; /* prevent accidental horizontal scroll on narrow simulated devices */
+    overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+:root {
+    --header-h: 80px;
+    --footer-h: 80px;
+}
 

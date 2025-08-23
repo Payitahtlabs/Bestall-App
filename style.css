@@ -19,9 +19,9 @@ header {
 
 .layout {
   display: flex;
-  flex: 1;
-  min-height: 0;
+  flex: 1 1 auto;
   align-items: flex-start;
+  min-height: 0; /* allow children to size naturally */
 }
 
 .restaurant {
@@ -118,8 +118,7 @@ header {
 }
 
 .dish__image-wrapper {
-  /* Dynamisch skalierend zwischen sehr schmal und Standardgröße */
-  flex: 0 0 clamp(72px, 18vw, 96px);
+  flex: 0 0 clamp(72px, 18vw, 96px); /* Dynamisch skalierend zwischen sehr schmal und Standardgröße */
   height: clamp(72px, 18vw, 96px);
   border-radius: 8px;
   overflow: hidden;

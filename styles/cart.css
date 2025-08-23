@@ -32,9 +32,13 @@
 
 .cart__content {
 	width: 100%;
-	height: 400px;
+	display: flex;
+	flex-direction: column;
 	position: sticky;
 	top: 0;
+	height: calc(100vh - var(--footer-h));
+	min-height: calc(100vh - var(--footer-h));
+	overflow: hidden;
 }
 
 .cart__title {
@@ -47,6 +51,8 @@
 }
 .cart__items {
 	padding: 16px;
+	flex: 1 1 auto;
+	overflow-y: auto;
 }
 .cart__summary {
 	padding: 16px;

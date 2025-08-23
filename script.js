@@ -85,15 +85,18 @@ function renderCart() {
 
   if (!list || !summary) return;
 
+  const totals = calcCartTotals(cart);
+
   if (!cart.length) {
     const empty = emptyCartTemplate();
+    const zeroSummaryHtml = cartSummaryTemplate({ subtotal: 0, delivery: 0, grand: 0 });
     [list, mList].forEach(el => el && (el.innerHTML = empty));
-    [summary, mSummary].forEach(el => el && (el.innerHTML = ''));
+    [summary, mSummary].forEach(el => el && (el.innerHTML = zeroSummaryHtml));
     return;
   }
 
   const itemsHtml = cart.map(cartItemTemplate).join('');
-  const summaryHtml = cartSummaryTemplate(calcCartTotals(cart));
+  const summaryHtml = cartSummaryTemplate(totals);
 
   [list, mList].forEach(el => el && (el.innerHTML = itemsHtml));
   [summary, mSummary].forEach(el => el && (el.innerHTML = summaryHtml));

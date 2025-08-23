@@ -39,8 +39,6 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	position: sticky;
-	top: 0;
 	flex: 1 1 auto;
 	height: 100%;
 	overflow: hidden; /* nur innerer Items-Bereich scrollt */

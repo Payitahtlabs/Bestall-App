@@ -10,10 +10,10 @@ let myDishes = [
   },
   {
   id: 2,
-    name: "Spaghetti Carbonara",
-    description: "Pasta mit cremiger Sauce, Pancetta und Parmesan",
+    name: "Spaghetti aglio e olio",
+    description: "Pasta mit Knoblauch, Olivenöl und Chili",
     price: 10.9,
-    image: "./assets/img/spaghetti-carbonara.jpg",
+    image: "./assets/img/spaghetti-aglio-e-olio.jpg",
     category: 'hauptgerichte'
   },
   {

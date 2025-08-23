@@ -16,8 +16,4 @@ body {
     flex-direction: column;
 }
 
-:root {
-    --header-h: 80px;
-    --footer-h: 80px;
-}
 

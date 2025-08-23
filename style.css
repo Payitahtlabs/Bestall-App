@@ -3,7 +3,7 @@ header {
   height: 80px;
   justify-content: space-between;
   align-items: center;
-  background-color: #ff8001;
+  background-color: var(--color-accent);
   padding: 0 16px;
   width: 100%;
 }
@@ -70,7 +70,7 @@ header {
 
 .restaurant__rating {
   font-size: 16px;
-  color: #ff8001;
+  color: var(--color-accent);
   margin-top: 24px;
 }
 
@@ -97,7 +97,7 @@ header {
 }
 
 .category-nav__btn.active {
-  background: #ff8001;
+  background: var(--color-accent);
   color: #fff;
 }
 
@@ -243,7 +243,7 @@ footer {
   }
 
   .category-nav__btn.active {
-    background: #ff8001;
+  background: var(--color-accent);
     color: #fff;
   }
 }

@@ -16,4 +16,12 @@ body {
     flex-direction: column;
 }
 
+/* Farbvariablen (helleres, gelblicheres Orange statt #ff8001) */
+:root {
+    --color-accent: #ffb347; /* neues helleres Orange */
+    --color-accent-hover: #ff9a1a; /* etwas kräftiger für Hover */
+    --color-accent-active: #ff8800; /* aktive/dunklere Variante */
+    --color-accent-rgb: 255,179,71; /* für rgba() */
+}
+
 

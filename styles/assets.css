@@ -7,7 +7,7 @@
 .dish__add-btn {
 	background: transparent;
 	border: none;
-	color: #ff8001;
+	color: var(--color-accent);
 	font-size: 28px;
 	line-height: 1;
 	cursor: pointer;
@@ -19,8 +19,8 @@
 	border-radius: 6px;
 }
 .dish__add-btn:hover {
-	background: rgba(255,128,1,0.10);
-	color: #d66e00;
+	background: rgba(var(--color-accent-rgb),0.12);
+	color: var(--color-accent-hover);
 }
 .dish__add-btn:active {
 	transform: scale(.9);
@@ -55,13 +55,13 @@
 .cart-item__btn--plus,
 .cart-item__btn--minus,
 .cart-item__btn--remove {
-	color:#ff8001;
+	color: var(--color-accent);
 }
 .cart-item__btn--plus:hover,
 .cart-item__btn--minus:hover,
 .cart-item__btn--remove:hover {
-	background: rgba(255,128,1,0.10);
-	color:#d66e00;
+	background: rgba(var(--color-accent-rgb),0.12);
+	color: var(--color-accent-hover);
 }
 .cart-item__btn:active {
 	transform: scale(.9);

@@ -149,7 +149,7 @@
 	margin-top:4px;
 	width:100%;
 	padding:10px 14px;
-	background:#ff8001;
+	background: var(--color-accent);
 	color:#fff;
 	border:none;
 	border-radius:6px;
@@ -157,7 +157,7 @@
 	font-size:15px;
 }
 .cart-summary__checkout:hover {
-	background:#d66e00;
+	background: var(--color-accent-hover);
 }
 
 

@@ -124,10 +124,20 @@ function calcCartTotals(items) {
   return { subtotal, delivery, grand: subtotal + delivery };
 }
 
+function showCartSuccess(refs) {
+  const success = typeof cartSuccessTemplate === 'function' ? cartSuccessTemplate() : '<div class="cart__success">Bestellung gesendet!</div>';
+  [refs.list, refs.mList].forEach(el => el && (el.innerHTML = success));
+  [refs.summary, refs.mSummary].forEach(el => el && (el.innerHTML = ''));
+}
+
 function checkoutCart() {
   if (!cart.length) return;
-  alert('Bestellung gesendet!');
   cart = [];
+  showCartSuccess(getCartDomRefs());
+}
+
+function dismissCartSuccess() {
+  document.querySelectorAll('.cart__success').forEach(el => el.remove());
   renderCart();
 }
 

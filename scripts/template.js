@@ -57,6 +57,15 @@ function cartSummaryTemplate(totals) {
 	</div>`;
 }
 
+function cartSuccessTemplate(){
+	return `
+		<div class="cart__success" role="status">
+			<div class="cart__success-msg">Deine Bestellung ist auf dem Weg!</div>
+			<button class="cart__success-btn" onclick="dismissCartSuccess()">OK</button>
+		</div>
+	`;
+}
+
 function emptyCartTemplate(){
 	return '<p class="cart__empty">Noch keine Artikel.</p>';
 }

@@ -60,4 +60,3 @@ function cartSummaryTemplate(totals) {
 function emptyCartTemplate(){
 	return '<p class="cart__empty">Noch keine Artikel.</p>';
 }
-

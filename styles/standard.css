@@ -7,7 +7,6 @@ html, body {
     min-height: 100vh;
     font-family: sans-serif;
     width: 100%;
-    overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
 }
 

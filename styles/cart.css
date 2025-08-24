@@ -204,6 +204,7 @@
 	position:relative;
 	min-height:52px;
 }
+
 .cart-mobile__overlay-title {
 	font-size:20px;
 	font-weight:bold;
@@ -215,6 +216,7 @@
 	transform:translate(-50%, -50%);
 	pointer-events:none;
 }
+
 .cart-mobile__overlay-close {
 	background:rgba(255,255,255,0.15);
 	border:none;
@@ -230,9 +232,11 @@
 	justify-content:center;
 	transition:background .2s;
 }
+
 .cart-mobile__overlay-close:hover {
 	background:rgba(255,255,255,0.4); /* etwas dunkler beim Hover */
 }
+
 .cart-mobile__overlay-close:active {
 	background:rgba(255,255,255,0.55); /* noch dunkler beim Klick */
 }

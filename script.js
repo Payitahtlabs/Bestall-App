@@ -4,7 +4,7 @@ let cart = [];
 function init() {
   renderCategory();
   renderCart();
-  
+
   const firstBtn = document.querySelector('.category-nav__btn');
   if (firstBtn) firstBtn.classList.add('active');
 
@@ -20,7 +20,6 @@ function renderCategory() {
   container.innerHTML = filtered.length ? sectionTemplate(activeCategory, filtered) : '';
 }
 
-
 function selectCategory(btn) {
   const cat = btn.getAttribute('data-category');
   if (!cat) return;
@@ -30,18 +29,16 @@ function selectCategory(btn) {
   renderCategory();
 }
 
-
-  function toggleBasket(event) {
-    if (event) {
-      event.stopPropagation();
-    }
-
-  const cartResponsive = document.getElementById('cart_responsive');
-  if(!cartResponsive) return;
-  cartResponsive.classList.toggle('cart-mobile--open');
+function toggleBasket(event) {
+  if (event) {
+    event.stopPropagation();
   }
 
-// === Cart Logic ===
+  const cartResponsive = document.getElementById('cart_responsive');
+  if (!cartResponsive) return;
+  cartResponsive.classList.toggle('cart-mobile--open');
+}
+
 function addToCart(dishId) {
   const dish = myDishes.find(d => d.id === dishId);
   if (!dish) return;
@@ -53,14 +50,14 @@ function addToCart(dishId) {
   renderCart();
 }
 
-function incrementItem(id){
+function incrementItem(id) {
   const item = cart.find(i => i.id === id);
   if (!item) return;
   item.qty += 1;
   renderCart();
 }
 
-function decrementItem(id){
+function decrementItem(id) {
   const item = cart.find(i => i.id === id);
   if (!item) return;
   item.qty -= 1;
@@ -70,44 +67,62 @@ function decrementItem(id){
   renderCart();
 }
 
-function removeFromCart(id){
+function removeFromCart(id) {
   cart = cart.filter(i => i.id !== id);
   renderCart();
 }
 
+function getCartDomRefs() {
+  return {
+    list: document.querySelector('.cart__items'),
+    summary: document.querySelector('.cart__summary'),
+    mList: document.querySelector('.cart-mobile__items'),
+    mSummary: document.querySelector('.cart-mobile__summary')
+  };
+}
+
+function isCartEmpty() {
+  return !cart.length;
+}
+
+function renderEmptyCart(refs) {
+  const emptyHtml = emptyCartTemplate();
+  const zeroSummary = cartSummaryTemplate({ subtotal: 0, delivery: 0, grand: 0 });
+  [refs.list, refs.mList].forEach(el => el && (el.innerHTML = emptyHtml));
+  [refs.summary, refs.mSummary].forEach(el => el && (el.innerHTML = zeroSummary));
+}
+
+function buildCartHTML(items, totals) {
+  return {
+    itemsHtml: items.map(cartItemTemplate).join(''),
+    summaryHtml: cartSummaryTemplate(totals)
+  };
+}
+
+function applyCartHTML(refs, html) {
+  [refs.list, refs.mList].forEach(el => el && (el.innerHTML = html.itemsHtml));
+  [refs.summary, refs.mSummary].forEach(el => el && (el.innerHTML = html.summaryHtml));
+}
+
 function renderCart() {
-  const [list, summary, mList, mSummary] = [
-    document.querySelector('.cart__items'),
-    document.querySelector('.cart__summary'),
-    document.querySelector('.cart-mobile__items'),
-    document.querySelector('.cart-mobile__summary')
-  ];
+  const refs = getCartDomRefs();
+  if (!refs.list || !refs.summary) return;
 
-  if (!list || !summary) return;
-
-  const totals = calcCartTotals(cart);
-
-  if (!cart.length) {
-    const empty = emptyCartTemplate();
-    const zeroSummaryHtml = cartSummaryTemplate({ subtotal: 0, delivery: 0, grand: 0 });
-    [list, mList].forEach(el => el && (el.innerHTML = empty));
-    [summary, mSummary].forEach(el => el && (el.innerHTML = zeroSummaryHtml));
+  if (isCartEmpty()) {
+    renderEmptyCart(refs);
     return;
   }
 
-  const itemsHtml = cart.map(cartItemTemplate).join('');
-  const summaryHtml = cartSummaryTemplate(totals);
-
-  [list, mList].forEach(el => el && (el.innerHTML = itemsHtml));
-  [summary, mSummary].forEach(el => el && (el.innerHTML = summaryHtml));
+  const totals = calcCartTotals(cart);
+  const html = buildCartHTML(cart, totals);
+  applyCartHTML(refs, html);
 }
 
-function calcCartTotals(items){
+function calcCartTotals(items) {
   const subtotal = items.reduce((sum, i) => sum + i.price * i.qty, 0);
   const delivery = subtotal > 0 ? 5 : 0;
   return { subtotal, delivery, grand: subtotal + delivery };
 }
-
 
 function checkoutCart() {
   if (!cart.length) return;
@@ -116,12 +131,8 @@ function checkoutCart() {
   renderCart();
 }
 
-// === Cart Show/Hide via Header Menu ===
-function toggleCartVisibility(){
+function toggleCartVisibility() {
   const cartEl = document.querySelector('.cart');
-  if(!cartEl) return;
+  if (!cartEl) return;
   cartEl.classList.toggle('cart--hidden');
 }
-
-
-

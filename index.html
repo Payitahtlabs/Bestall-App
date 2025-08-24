@@ -68,7 +68,10 @@
         <div id="cart_responsive" class="cart-mobile">
             <button id="cart_mobile_btn" class="cart-mobile__toggle" onclick="toggleBasket()">Warenkorb</button>
             <div id="cart_overlay" class="cart-mobile__overlay">
-                <span class="cart-mobile__overlay-title" onclick="toggleBasket(event)">Warenkorb</span>
+                <div class="cart-mobile__overlay-bar">
+                    <span class="cart-mobile__overlay-title">Warenkorb</span>
+                    <button class="cart-mobile__overlay-close" aria-label="Schließen" onclick="toggleBasket(event)">×</button>
+                </div>
                 <div class="cart-mobile__overlay-content">
                     <div class="cart-mobile__items"></div>
                     <div class="cart-mobile__summary"></div>

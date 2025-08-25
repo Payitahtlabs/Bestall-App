@@ -33,10 +33,19 @@ function toggleBasket(event) {
   if (event) {
     event.stopPropagation();
   }
-
+  
   const cartResponsive = document.getElementById('cart_responsive');
   if (!cartResponsive) return;
   cartResponsive.classList.toggle('cart-mobile--open');
+
+  const body = document.body;
+  const isOverlayOpen = cartResponsive.classList.contains('cart-mobile--open');
+
+  if (isOverlayOpen) {
+    body.classList.add('no-scroll');
+  } else {
+    body.classList.remove('no-scroll');
+  }
 }
 
 function addToCart(dishId) {

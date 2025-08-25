@@ -21,3 +21,7 @@ body {
     --color-accent-active: #ff8800; /* aktive/dunklere Variante */
     --color-accent-rgb: 255,179,71; /* für rgba() */
 }
+
+body.no-scroll {
+    overflow: hidden;
+}

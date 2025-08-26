@@ -343,8 +343,8 @@ footer {
 
 @media (max-width: 380px) {
   .category-nav {
-    gap: 2px;
-    padding: 4px 0 4px 8px;
+    gap: 0px;
+    padding: 4px 0 4px 2px;
   }
 
   .category-nav__btn {
